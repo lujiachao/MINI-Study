@@ -1,0 +1,22 @@
+<!--pages/list/list.wxml-->
+<view>
+   <swiper indicator-dots='true' indicator-color='yellowgreen' indicator-active-color='pink'>
+     <swiper-item>
+       <image src='/images/detail/carousel/05.jpg'></image>
+     </swiper-item>
+     <swiper-item>
+       <image src='/images/detail/carousel/06.jpg'></image>
+     </swiper-item>
+     <swiper-item>
+       <image src='/images/detail/carousel/07.jpg'></image>
+     </swiper-item>
+     <swiper-item>
+       <image src='/images/detail/carousel/08.jpg'></image>
+     </swiper-item>
+   </swiper>
+   <block wx:for='{{listArr}}' wx:key='{{index}}'>
+    <view>
+      <template is='listTmp'/>
+      </view>
+   </block>
+</view>

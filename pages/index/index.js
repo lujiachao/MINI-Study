@@ -4,17 +4,66 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
+  data: { 
+    msg: '哈哈',
+    userInfo:{},
+    isShow: true
+  },
+  
+  handleClick(){
+     // 点击跳转到list页面,navigateTo:保留回退redirctTo:不保留原页面
+     wx.navigateTo({
+       url: '/pages/list/list'
+     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo();
+    
   },
+  getUserInfo(){
+    //判断用户是否授权
+    wx.getSetting({
+      success: (data) => {
+        console.log(data);
+        if (data.authSetting['scope.userInfo']) {
+          //用户已经授权
+          this.setData({
+            isShow: false
+          });
+        } else {
+          //用户没有授权
+          this.setData({
+            isShow: true
+          });
+        }
+      }
+    })
 
+    wx.getUserInfo({
+      success: (data) => {
+        console.log(data);
+        //更新data中的userInfo
+        this.setData({
+          userInfo: data.userInfo
+        });
+      },
+      fail: () => {
+        console.log('获取用户数据失败');
+      }
+    })
+  },
+ handleGetUserInfo(data){
+   console.log('用户点击了',data);
+   //判断用户点击的是否允许
+   if(data.detail.rawData){
+     //用户点击的是允许
+     this.getUserInfo();
+   }
+ },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

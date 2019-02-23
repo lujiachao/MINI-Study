@@ -1,9 +1,10 @@
 {
-  "pages": [
-   "pages/index/index"
+  "pages": [                  
+    "pages/index/index",
+    "pages/list/list"
   ],
-  "window":{
-    "navigationBarBackgroundColor": "#8ED145",
+  "window": {
+    "navigationBarBackgroundColor": "#489B81",
     "navigationBarTitleText": "welcome to ljc",
     "navigationBarTextStyle": "black"
   }
