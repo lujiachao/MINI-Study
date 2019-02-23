@@ -9,6 +9,13 @@ Page({
     userInfo:{},
     isShow: true
   },
+  
+  handleClick(){
+     // 点击跳转到list页面,navigateTo:保留回退redirctTo:不保留原页面
+     wx.navigateTo({
+       url: '/pages/list/list'
+     })
+  },
 
   /**
    * 生命周期函数--监听页面加载
