@@ -1,0 +1,17 @@
+<template name='listTmp'>
+<view class='tmpContainer'>
+  <view class='avatar_date'>
+     <image src="/images/avatar/0.png"></image>
+     <text>may 19 2018</text>
+  </view>
+  <text class='company'>尚硅谷</text>
+  <image class='contentImg' src="/images/detail/carousel/05.jpg"></image>
+  <text>sdsdsdsdsdsdsdsssssssssssssssss</text>
+  <view class='collection_love'>
+      <image src="/images/icon/star.png"></image>
+      <text>88</text>
+      <image src="/images/icon/view.png"></image>
+      <text>88</text>
+  </view>
+</view>
+</template>
