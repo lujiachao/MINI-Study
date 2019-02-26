@@ -22,7 +22,12 @@ Page({
    */
   onLoad: function (options) {
     this.getUserInfo();
-    
+    //
+    wx.login({
+      success: function(data) {
+        console.log('获取登录 Code：' + data.code);
+      }
+    })
   },
   getUserInfo(){
     //判断用户是否授权
